@@ -1,0 +1,56 @@
+/* background fixed */
+
+.background{
+  height: 100%;
+  width: 100%;
+  background: map-get($color,"-white");
+  background: linear-gradient(165deg, map-get($color,"-white") 0%, map-get($color,"-iceberg") 100%);
+  &::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    transform: translate(-40%, -40%);
+    filter: blur(20px);
+    background-color: map-get($color,'-lime');
+    opacity: 0.13;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    transform: translate(-80%, 50%);
+    filter: blur(20px);
+    background-color: #00FFEB;
+    opacity: 0.13;
+  }
+}
+
+/* main */
+main{
+  .main-bg{
+    background: map-get($color,"-white");
+    background: linear-gradient(165deg, map-get($color,"-white") 0%, map-get($color,"-iceberg") 100%);
+  }
+  .homepage-img{
+    .image{
+      width: 400px;
+      @include media-query("(max-width: 550px)") {
+        width: 70%;
+      }
+    }
+  }
+  .homepage-text{
+    .logo{
+      width: 100px;
+      height: 80px;
+    }
+  }
+}

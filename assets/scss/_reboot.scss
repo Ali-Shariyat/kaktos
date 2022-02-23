@@ -1,0 +1,465 @@
+@include font-face(iran-yekan, '../fonts/iran-yekan/IRANYekanWebBlack', 900, normal, woff);
+@include font-face(iran-yekan, '../fonts/iran-yekan/IRANYekanWebBold', 600, normal, woff);
+@include font-face(iran-yekan, '../fonts/iran-yekan/IRANYekanWebLight', 100, normal, woff);
+@include font-face(iran-yekan, '../fonts/iran-yekan/IRANYekanWebMedium', 200, normal, woff);
+//@include font-face(iran-sans, '../fonts/iran-yekan/IRANYekanWebRegular', 100, normal, woff);
+//@include font-face(iran-sans, '../fonts/iran-yekan/IRANYekanWebThin', 100, normal, woff);
+@include font-face(icon-font, '../fonts/icon-font/icon-font', normal, normal, woff);
+//@include font-face(icon_font, '../fonts/icon_font', normal, normal, woff);
+
+[class*="font-weight-"] {
+  font-family: iran-yekan, $DefaultFonts;
+}
+
+.fw-normal {
+  font-weight: 100 !important;
+}
+
+[class^="icon-font-"]:before,
+[class^="icon-font-"]:after {
+  font-family: icon-font, $DefaultFonts;
+  font-weight: normal;
+  line-height: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: iran-yekan, $DefaultFonts;
+}
+
+body {
+}
+
+a, a:active, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  //color: $color-cream-can !important;
+  & img {
+    opacity: .75;
+  }
+}
+
+ul li {
+  list-style: none
+}
+
+.dir-ltr {
+  direction: ltr;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.continuation-line {
+  height: 2px;
+}
+
+.text-no-wrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.black-page {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 9;
+  visibility: hidden;
+  transition: all .2s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.36);
+  &.active{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.rtl {
+  .continuation-line {
+    margin-right: 25px;
+    margin-left: 0;
+  }
+}
+
+//==========================================
+//button
+//==========================================.
+.btn{
+  &.btn-outline-purple{
+    border-color: map-get($color,"-purple");
+    &:hover{
+      background-color: map-get($color,"-purple");
+      border-color: map-get($color,"-purple");
+    }
+  }
+}
+//==========================================
+//line height
+//==========================================
+.line-height-1{
+  line-height: 1;
+}
+//==========================================
+//list-style
+//==========================================
+.list-style-1 {
+  > li {
+    &:before {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 5px;
+      height: 5px;
+      background-color: #000;
+    }
+  }
+}
+
+//==========================================
+//border
+//==========================================
+@for $i from 1 through 10 {
+  .border-radius-#{$i*5} {
+    border-radius: #{$i*2}px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .border-width-#{$i} {
+    border-width: #{$i}px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .border-bottom-width-#{$i} {
+    border-bottom-width: #{$i}px;
+  }
+}
+
+.border-style-solid{
+  border-style: solid;
+}
+.border-bottom-style-solid{
+  border-bottom-style: solid;
+}
+
+@include generate-color("border");
+
+//==========================================
+//colors
+//==========================================
+
+@include generate-color("color");
+
+//==========================================
+//background colors
+//==========================================
+
+@include generate-color("bgc");
+
+
+.bg-instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+//==========================================
+// background image options
+//==========================================
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-position-center {
+  background-position: center;
+}
+
+.bg-size-cover {
+  background-size: cover;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed;
+}
+
+//==========================================
+//images
+//==========================================
+.object-fit-cover {
+  object-fit: cover;
+}
+//==========================================
+//margin and padding
+//==========================================
+.m-top {
+  margin-top: $margin-and-padding-size;
+}
+
+.m-bottom {
+  margin-bottom: $margin-and-padding-size;
+}
+
+.p-top {
+  padding-top: $margin-and-padding-size;
+}
+
+.p-bottom {
+  padding-bottom: $margin-and-padding-size;
+}
+
+//==========================================
+//icon fonts
+//==========================================
+.icon-font-arrow-right:before {
+  content: "\f100";
+}
+
+.icon-font-writing:before {
+  content: "\f101";
+}
+
+.icon-font-microphone:before {
+  content: "\f102";
+}
+
+.icon-font-academy:before {
+  content: "\f103";
+}
+
+.icon-font-note-writing:before {
+  content: "\f104";
+}
+
+.icon-font-journal:before {
+  content: "\f105";
+}
+
+.icon-font-phone:before {
+  content: "\f106";
+}
+
+.icon-font-home:before {
+  content: "\f107";
+}
+
+.icon-font-twitter:before {
+  content: "\f108";
+}
+
+.icon-font-rss:before {
+  content: "\f109";
+}
+
+.icon-font-facebook:before {
+  content: "\f110";
+}
+
+.icon-font-telegram:before {
+  content: "\f111";
+}
+
+.icon-font-instagram:before {
+  content: "\f112";
+}
+
+.icon-font-hint:before {
+  content: "\f113";
+}
+
+.icon-font-close-border:before {
+  content: "\f114";
+}
+
+.icon-font-arrow-bottom:before {
+  content: "\f115";
+}
+
+.icon-font-clock:before {
+  content: "\f116";
+}
+
+.icon-font-conference:before {
+  content: "\f117";
+}
+
+.icon-font-radio:before {
+  content: "\f118";
+}
+
+.icon-font-jurnal:before {
+  content: "\f119";
+}
+
+.icon-font-team-work:before {
+  content: "\f120";
+}
+
+.icon-font-conference-2:before {
+  content: "\f121";
+}
+
+.icon-font-conference-3:before {
+  content: "\f122";
+}
+
+.icon-font-university:before {
+  content: "\f123";
+}
+
+.icon-font-color-picker:before {
+  content: "\f125";
+}
+
+.icon-font-social-network:before {
+  content: "\f126";
+}
+
+//==========================================
+//z-index
+//==========================================
+.z-index-1 {
+  z-index: 1;
+}
+
+//==========================================
+//font size
+//==========================================
+
+@for $i from 2 through 50 {
+  .font-size-#{$i*2} {
+    font-size: #{$i*2}px;
+  }
+}
+
+//==========================================
+//flex
+//==========================================
+.flex-2 {
+  flex: 2;
+}
+
+.flex-100 {
+  flex: 100;
+}
+
+//==========================================
+//btn
+//==========================================
+.btn {
+  &.btn-xs {
+    padding: 0.05rem 0.4rem;
+    font-size: 0.775rem;
+    line-height: 1.4;
+    border-radius: 0.2rem;
+  }
+}
+
+.btn {
+  .btn-solid {
+
+  }
+
+  .btn-hollow {
+
+  }
+}
+
+//==========================================
+//container
+//==========================================
+@include media-query("(min-width: 1200px)") {
+  .container.custom-container {
+    max-width: 1550px;
+    width: 90%;
+  }
+}
+
+//==========================================
+// hint
+//==========================================
+.hint {
+  width: $f-16;
+  margin-left: auto;
+  margin-right: 0;
+
+  .icon-font-hint {
+    &:before {
+      font-size: $f-16;
+    }
+  }
+
+  .hint-content {
+    position: absolute;
+    bottom: 100%;
+    left: -110px;
+    right: -110px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+    padding-bottom: 10px;
+  }
+}
+
+.hint-popup {
+  .modal-dialog {
+    max-width: 1140px;
+
+    .modal-content {
+      border-radius: 10px;
+
+      .website {
+        margin: 0 0.6rem;
+      }
+    }
+  }
+}
+
+.rtl {
+  .hint {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+//==========================================
+// other
+//==========================================
+.phone-number, .website {
+  [class^="icon-font-"]:before {
+    font-size: $f-16;
+  }
+}
+
+//==========================================
+//load page
+//==========================================
+//.folding-cube {
+//  width: 40px;
+//  height: 40px;
+//  -webkit-transform: rotateZ(45deg);
+//  transform: rotateZ(45deg);
+//  position: fixed;
+//  left: 50%;
+//  top: 50%;
+//  margin: -20px 0 0 -20px;
+//  z-index: 100;
+//}

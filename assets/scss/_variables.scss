@@ -1,0 +1,35 @@
+$DefaultFonts: serif, sans-serif, cursive, fantasy, monospace;
+//===============================================
+//colors
+//===============================================
+
+$color: (
+        -transparent: transparent,
+        -white: #fff,
+        -black: #000,
+        -black-b-8: rgba(0,0,0,0.8),
+        -purple : #800080,
+        -valencia:#d94c48,
+        -black-russian:#0e0f10,
+        -lime:#00FF00,
+        -aqua:#00FFEB,
+        -iceberg:#D1DDD9,
+        -dim-gray:#676767,
+);
+
+//===============================================
+//numbers
+//===============================================
+$L: 1200px;
+$M: 992px;
+$S: 768px;
+$xs: 576px;
+$margin-and-padding-size: 2.5rem;
+$f-10: 10px;
+$f-16: 16px;
+$f-14: 14px;
+$f-12: 12px;
+$f-10: 10px;
+$f-18: 18px;
+$f-20: 20px;
+$f-26: 26px;

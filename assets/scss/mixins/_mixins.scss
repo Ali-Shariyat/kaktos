@@ -1,0 +1,169 @@
+//-------------------------------------------
+//   mixins.scss
+//   - font face
+//   - transition
+//   - generate
+//   - numbers
+//   - media query
+//   - user select
+//   - placeholder
+//-------------------------------------------
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-weight: $weight;
+    font-style: $style;
+    src: $src;
+  }
+}
+
+// =============================================================================
+// transition
+// =============================================================================
+@mixin transition($value) {
+  transition: $value;
+  -moz-transition: $value;
+  -webkit-transition: $value;
+  -o-transition: $value;
+}
+
+// =============================================================================
+// generate
+// =============================================================================
+
+@mixin generate-color($get_type : "") {
+  @if ($get_type == #{"color"}) {
+    @each $key, $value in $color {
+      .color#{$key} {
+        color: map-get($color, $key);
+      }
+      .color#{$key}-hover {
+        &:hover {
+          color: map-get($color, $key) !important;
+        }
+      }
+    }
+  } @else if ($get_type == #{"bgc"}) {
+    @each $key, $value in $color {
+      .bgc#{$key} {
+        background-color: map-get($color, $key);
+      }
+      .bgc#{$key}-hover {
+        &:hover {
+          background-color: map-get($color, $key) !important;
+        }
+      }
+    }
+  } @else if ($get_type == #{"border"}) {
+    @each $key, $value in $color {
+      .border-color#{$key} {
+        border-color: map-get($color, $key);
+      }
+      .border-color#{$key}-hover {
+        &:hover {
+          border-color: map-get($color, $key) !important;
+        }
+      }
+      .border-bottom-color#{$key} {
+        border-color: map-get($color, $key);
+      }
+      .border-bottom-color#{$key}-hover {
+        &:hover {
+          border-color: map-get($color, $key) !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-icon() {
+  @each $key, $value in $icon-font {
+    .icon-font#{$key} {
+      &::before {
+        content: $value;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// Media Query
+// =============================================================================
+@mixin media-query($canvas) {
+
+  @if $canvas == LM {
+    @media only screen and (min-width: $M) {
+      @content
+    }
+  } @else if $canvas == M {
+    @media only screen and (max-width: $M) {
+      @content
+    }
+  } @else if $canvas == L {
+    @media only screen and (min-width: $L) {
+      @content
+    }
+  } @else if $canvas == LB {
+    @media only screen and (max-width: $L) {
+      @content
+    }
+  } @else if $canvas == S {
+    @media only screen and (max-width: $S) {
+      @content
+    }
+  } @else if $canvas == xs {
+    @media only screen and (max-width: $xs) {
+      @content
+    }
+  } @else {
+    @media only screen and #{$canvas} {
+      @content
+    }
+  }
+}
+
+// =============================================================================
+// User select
+// =============================================================================
+@mixin user-select($value:none) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+}
+
+// =============================================================================
+// placeholder
+// =============================================================================
+@mixin placeholder() {
+  &::-webkit-input-placeholder { /* Edge */
+    @content
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    @content
+  }
+
+  &::placeholder {
+    @content
+  }
+}
