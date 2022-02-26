@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="assets/vendors/nice-number/jquery.nice-number.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/OverlayScrollbars/css/OverlayScrollbars.min.css">
 
-    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lightgallery-bundle.css" />
+    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lightgallery.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lg-zoom.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
@@ -84,218 +84,718 @@
                 </ul>
             </div>
             <div class="col-9 h-100 d-flex scrollbar">
-                <ul class="category-leaders main-bg border-color-white border-style-solid border-width-1 border-radius-30 mb-3">
-                   <li data-sort-by="symbol">
-                       asfasfasf
-                   </li>
-
-                </ul>
                 <div class="gallery w-100">
-                    <div class="button-group sort-by-button-group">
-                        <button class="button is-checked" data-sort-value="original-order">original order</button>
-                        <button class="button" data-sort-value="name">name</button>
-                        <button class="button" data-sort-value="symbol">symbol</button>
-                        <button class="button" data-sort-value="number">number</button>
-                        <button class="button" data-sort-value="weight">weight</button>
-                        <button class="button" data-sort-value="category">category</button>
+                    <div class="d-flex align-items-center justify-content-between py-2 bgc-white-b-6 border-color-white border-style-solid border-width-1 border-radius-30 mb-3">
+                        <div id="filters" class="category-leaders js-radio-button-group filters button-group px-3">
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30 is-checked" data-filter="*">همه</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="best-sellers-category">پرفروش ترین ها</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="arqhavan-suggestion">پیشنهاد ارغوان</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="size-6">سایز ۶</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="size-8">سایز ۸</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="size-10">سایز ۱۰</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="size-12">سایز ۱۲</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="thumbnail">بند انگشتی</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-filter="special-flowers">گل های خاص</button>
+                        </div>
+                        <div id="sorts" class="sort-button-group d-flex flex-wrap js-radio-button-group filters button-group px-3">
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30" data-sort-direction="asc" data-sort-value="price">ارزان ترین ها</button>
+                            <button class="border-0 bgc-transparent color-dim-gray-2-b-5 px-2 font-size-12 border-radius-30 is-checked" data-sort-direction="desc" data-sort-value="price">گران ترین ها</button>
+                        </div>
                     </div>
-
-                    <div class="grid w-100 gallery-container" id="gallery-container">
-                        <div class="grid-item px-2 mb-3 element-item  transition" data-category="transition" data-src="assets/image/cactus's/1.png">
+                    <div class="grid w-100 gallery-container" id="gallery">
+                        <div class="grid-item px-2 mb-3" data-order="arqhavan-suggestion" data-price="2000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/1.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="کاکتوس تاج خروسی">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس تاج خروسی</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold">۲۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  weight" data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="best-sellers-category" data-price="19000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/4.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/4.png" alt="کاکتوس نیش مادرزن">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس نیش مادرزن</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۱۹۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="size-8" data-price="6000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="size-6" data-price="250000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="size-6" data-price="9000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="size-8" data-price="2000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/1.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="کاکتوس تاج خروسی">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس تاج خروسی</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold">۲۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="size-6" data-price="19000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/4.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/4.png" alt="کاکتوس نیش مادرزن">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس نیش مادرزن</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۱۹۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid-item px-2 mb-3 element-item  " data-src="assets/image/cactus's/1.png">
+                        <div class="grid-item px-2 mb-3" data-order="best-sellers-category" data-price="6000">
                             <div class="p-2 bgc-white border-radius-20">
-                                <div class="image text-center position-relative">
-                                <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
-                                    ۳۰٪
-                                </span>
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="cactus">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
                                     </a>
                                 </div>
                                 <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
-                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2">کاکتوس تاج خروسی</a>
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
                                     <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
                                         <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
                                             <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
                                         </div>
                                         <div class="px-1">
-                                            <span class="font-size-10 color-black-b-8 fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
                                             <i class="color-black-b-8">/</i>
-                                            <span class="font-size-10 color-purple fw-bold">۶۸.۰۰۰</span>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="thumbnail" data-price="250000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="thumbnail" data-price="9000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="arqhavan-suggestion" data-price="2000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/1.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="کاکتوس تاج خروسی">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس تاج خروسی</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold">۲۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="best-sellers-category" data-price="19000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/4.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/4.png" alt="کاکتوس نیش مادرزن">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس نیش مادرزن</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۱۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-6" data-price="6000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="arqhavan-suggestion" data-price="250000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="special-flowers" data-price="9000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="arqhavan-suggestion" data-price="2000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/1.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/1.png" alt="کاکتوس تاج خروسی">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس تاج خروسی</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold">۲۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-6" data-price="19000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/4.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/4.png" alt="کاکتوس نیش مادرزن">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس نیش مادرزن</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۱۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="best-sellers-category" data-price="6000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="arqhavan-suggestion" data-price="250000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="special-flowers" data-price="9000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="best-sellers-category" data-price="6000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-12" data-price="250000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-12" data-price="9000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-10" data-price="6000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/2.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/2.png" alt="کاکتوس زبان مادر شوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس زبان مادر شوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۶۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="size-10" data-price="250000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/5.png">
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/5.png" alt="کاکتوس کله خواهرشوهر">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس کله خواهرشوهر</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۲۵۰۰۰۰</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item px-2 mb-3" data-order="special-flowers" data-price="9000">
+                            <div class="p-2 bgc-white border-radius-20">
+                                <div class="image text-center position-relative" data-src="assets/image/cactus's/3.png">
+                                    <span class="discount position-absolute bgc-salmon font-size-12 fw-bold px-2 border-radius-50 color-white">
+                                        ۳۰٪
+                                    </span>
+                                    <div class="gallery-popup position-absolute w-100 h-100 d-flex align-items-end justify-content-end p-2 bgc-whisper-2-b-5 border-radius-20 cursor-pointer">
+                                        <i class="icon-font-search d-flex align-content-center justify-content-center fst-normal bgc-white p-2 border-radius-50 color-purple"></i>
+                                    </div>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/image/cactus's/3.png" alt="کاکتوس اورتانزیا">
+                                    </a>
+                                </div>
+                                <div class="galley-content text-center mt-3 d-flex flex-wrap w-100 justify-content-center">
+                                    <a href="" class="font-size-14 color-black-b-8 color-purple-hover mb-2 text-no-wrap">کاکتوس اورتانزیا</a>
+                                    <div class="price border-style-solid border-width-1 text-start border-color-whisper border-radius-20 mt-2 d-flex flex-wrap align-items-center justify-content-between p-1">
+                                        <div class="cart-plus bgc-white-smoke d-flex align-items-center justify-content-center p-2 border-radius-10 color-purple cursor-pointer color-white-hover bgc-purple-hover transition-1s">
+                                            <i class="icon-font-plus fw-bold font-size-10 pt-1 fst-normal"></i>
+                                        </div>
+                                        <div class="px-1">
+                                            <span class="font-size-10 color-dim-gray fw-bold text-decoration-line-through">۹۸.۰۰۰ </span>
+                                            <i class="color-black-b-8">/</i>
+                                            <span class="font-size-10 color-purple fw-bold number">۹۰۰۰</span>
                                         </div>
                                     </div>
                                 </div>
@@ -313,7 +813,7 @@
 <script src="assets/vendors/MatchHeight/jquery.matchHeight.js"></script>
 <script src="assets/vendors/nice-number/jquery.nice-number.js"></script>
 <script src="assets/vendors/OverlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<script src="assets/vendors/lightgallery/lightgallery.min.js"></script>
+<script src="assets/vendors/lightgallery/lightgallery-all.min.js"></script>
 <script src="assets/vendors/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
 <script src="assets/vendors/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
 <script src="assets/vendors/isotope/isotope.pkgd.min.js"></script>

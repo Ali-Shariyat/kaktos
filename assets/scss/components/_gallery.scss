@@ -1,13 +1,26 @@
 .gallery {
   .image{
      width: 100%;
+    &:hover{
+      .gallery-popup{
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .gallery-popup{
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s ease;
+      z-index: 10;
+    }
     .discount{
-      top: 0;
-      left: 0;
+      top: 8px;
+      left: 8px;
     }
     img{
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
+      padding: 15px;
     }
   }
   .galley-content{
@@ -26,4 +39,17 @@
   .grid-item {
     width: 20%;
   }
+  .category-leaders,
+  .sort-button-group{
+    .is-checked{
+      border: 1px solid map-get($color,"-purple") !important;
+       color: map-get($color,"-purple") ;
+    }
+  }
+  .sort-button-group{
+    border-right: 1px solid map-get($color,"-dim-gray-2-b-5");
+  }
+}
+.lg-outer{
+  direction: ltr !important;
 }
