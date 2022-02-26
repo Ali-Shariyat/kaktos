@@ -6,15 +6,22 @@ $DefaultFonts: serif, sans-serif, cursive, fantasy, monospace;
 $color: (
         -transparent: transparent,
         -white: #fff,
+        -white-b-6: rgba(255, 255, 255, 0.6),
+        -white-smoke : #f6f6f6,
         -black: #000,
-        -black-b-8: rgba(0,0,0,0.8),
+        -black-b-8: rgba(0, 0, 0, 0.8),
         -purple : #800080,
         -valencia:#d94c48,
         -black-russian:#0e0f10,
-        -lime:#00FF00,
-        -aqua:#00FFEB,
-        -iceberg:#D1DDD9,
+        -lime:#00ff00,
+        -aqua:#00ffeb,
+        -iceberg:#d1ddd9,
         -dim-gray:#676767,
+        -whisper:#ececec,
+        -lavender-rose:#f3aaf3,
+        -lavender-rose-b-6:rgba(243, 170, 243, 0.6),
+        -salmon:#ff7b7b,
+        -cruise:#b1ddcf,
 );
 
 //===============================================

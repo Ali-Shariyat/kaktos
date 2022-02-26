@@ -1,0 +1,29 @@
+.gallery {
+  .image{
+     width: 100%;
+    .discount{
+      top: 0;
+      left: 0;
+    }
+    img{
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .galley-content{
+    .price{
+      .cart-plus{
+        width: 25px;
+        height: 25px;
+        i{
+          &::before{
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+  .grid-item {
+    width: 20%;
+  }
+}

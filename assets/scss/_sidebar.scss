@@ -1,0 +1,38 @@
+.sidebar {
+  .image {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 125px;
+    height: 96px;
+  }
+
+  .sidebar-main {
+    .os-padding {
+      margin-top: 15px;
+    }
+
+    .create-vase-items {
+      .active {
+        background-color: map-get($color, "-white");
+        color: map-get($color, "-lavender-rose-b-6");
+        border: 1px solid map-get($color, "-cruise");
+      }
+      .cactus-icon{
+        &::before{
+          font-size: 145px;
+        }
+      }
+      .soil-icon{
+        &::before{
+          font-size: 54px;
+        }
+      }
+      .vase-icon{
+        &::before{
+          font-size: 80px;
+        }
+      }
+    }
+  }
+}

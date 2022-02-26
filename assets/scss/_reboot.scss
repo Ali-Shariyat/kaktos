@@ -35,6 +35,7 @@ body {
 a, a:active, a:hover {
   text-decoration: none;
   color: inherit;
+  transition: all .1s ease;
 }
 
 a:hover {
@@ -70,7 +71,9 @@ ul li {
   overflow: hidden;
   display: inline-block;
 }
-
+.cursor-pointer{
+  cursor: pointer;
+}
 .black-page {
   position: fixed;
   left: 0;
@@ -95,6 +98,9 @@ ul li {
   }
 }
 
+.transition-1s{
+  transition: all .1s ease;
+}
 //==========================================
 //button
 //==========================================.
@@ -233,47 +239,47 @@ ul li {
   content: "\f100";
 }
 
-.icon-font-writing:before {
+.icon-font-cactus:before {
   content: "\f101";
 }
 
-.icon-font-microphone:before {
+.icon-font-mail:before {
   content: "\f102";
 }
 
-.icon-font-academy:before {
+.icon-font-soil:before {
   content: "\f103";
 }
 
-.icon-font-note-writing:before {
+.icon-font-phone:before {
   content: "\f104";
 }
 
-.icon-font-journal:before {
+.icon-font-glasses:before {
   content: "\f105";
 }
 
-.icon-font-phone:before {
+.icon-font-bow-tie:before {
   content: "\f106";
 }
 
-.icon-font-home:before {
+.icon-font-search:before {
   content: "\f107";
 }
 
-.icon-font-twitter:before {
+.icon-font-slide-arrow-right:before {
   content: "\f108";
 }
 
-.icon-font-rss:before {
+.icon-font-slide-arrow-left:before {
   content: "\f109";
 }
 
-.icon-font-facebook:before {
+.icon-font-vase:before {
   content: "\f110";
 }
 
-.icon-font-telegram:before {
+.icon-font-whatsApp:before {
   content: "\f111";
 }
 
@@ -281,56 +287,8 @@ ul li {
   content: "\f112";
 }
 
-.icon-font-hint:before {
+.icon-font-plus:before {
   content: "\f113";
-}
-
-.icon-font-close-border:before {
-  content: "\f114";
-}
-
-.icon-font-arrow-bottom:before {
-  content: "\f115";
-}
-
-.icon-font-clock:before {
-  content: "\f116";
-}
-
-.icon-font-conference:before {
-  content: "\f117";
-}
-
-.icon-font-radio:before {
-  content: "\f118";
-}
-
-.icon-font-jurnal:before {
-  content: "\f119";
-}
-
-.icon-font-team-work:before {
-  content: "\f120";
-}
-
-.icon-font-conference-2:before {
-  content: "\f121";
-}
-
-.icon-font-conference-3:before {
-  content: "\f122";
-}
-
-.icon-font-university:before {
-  content: "\f123";
-}
-
-.icon-font-color-picker:before {
-  content: "\f125";
-}
-
-.icon-font-social-network:before {
-  content: "\f126";
 }
 
 //==========================================
@@ -388,7 +346,7 @@ ul li {
 //==========================================
 @include media-query("(min-width: 1200px)") {
   .container.custom-container {
-    max-width: 1550px;
+    max-width: 1255px;
     width: 90%;
   }
 }
