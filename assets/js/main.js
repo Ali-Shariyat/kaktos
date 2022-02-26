@@ -114,11 +114,8 @@ $(document).ready(function () {
                 selector: "[data-order='"+ filterValue.replace('*', '') + "'] .image"
             });
         }
-
-
     });
 });
-
 
 $(document).ready(function () {
     $("#gallery").lightGallery({
