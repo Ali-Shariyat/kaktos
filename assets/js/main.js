@@ -119,6 +119,7 @@ $(document).ready(function () {
     });
 });
 
+
 $(document).ready(function () {
     $("#gallery").lightGallery({
         speed: 500,
