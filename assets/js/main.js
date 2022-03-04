@@ -124,7 +124,6 @@ $(document).ready(function () {
         plugins: [lgZoom,lgFullscreen]
     });
 });
-//button active mode
 $('.sort-button-group').on('click', 'button', function () {
     var sortValue = $(this).attr('data-sort-value');
     var direction = $(this).attr('data-sort-direction');
@@ -138,4 +137,53 @@ $('.button-group').each(function (i, buttonGroup) {
         $buttonGroup.find('.is-checked').removeClass('is-checked');
         $(this).addClass('is-checked');
     });
+});
+
+/* custom dropdown */
+
+$("[data-dropdown]").each(function () {
+    var $this = $(this);
+    var findText = $(this).find(".is-checked").text();
+    $this.find(".option-head .set-text").text(findText);
+
+    $this.click(function (e) {
+        var findText = $(this).find(".is-checked").text();
+        $(this).find(".option-head .set-text").text(findText);
+        $(this).find(".options").toggleClass("active");
+        $(this).find(".arrow").toggleClass("active");
+
+
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+/* menu fixed */
+
+
+$(".sidebar-sm").click(function () {
+    $(".sidebar-sm").removeClass("active");
+    $(".back-black").removeClass("active");
+});
+
+$(".menu-icon").click(function () {
+    $(this).siblings(".sidebar-sm").addClass("active");
+    $(".back-black").addClass("active");
+});
+
+$(".back-black").click(function () {
+    $(".sidebar-sm").removeClass("active");
+    $(this).removeClass("active");
+});
+
+
+//==================
+//nice number
+//==================
+$('[data-number-spinner]').niceNumber({
+    autoSize: false,
+    autoSizeBuffer: 1,
+});
+$(document).on("click", ".nice-number", function (e) {
+    e.stopPropagation();
 });

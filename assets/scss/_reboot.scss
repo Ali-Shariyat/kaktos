@@ -18,7 +18,7 @@
 [class^="icon-font-"]:before,
 [class^="icon-font-"]:after {
   font-family: icon-font, $DefaultFonts;
-  font-weight: normal;
+  font-weight: inherit;
   line-height: 1;
 }
 
@@ -289,6 +289,22 @@ ul li {
 
 .icon-font-plus:before {
   content: "\f113";
+}
+
+.icon-font-close:before {
+  content: "\f114";
+}
+
+.icon-font-arrow-down:before {
+  content: "\f115";
+}
+
+.icon-font-arrow-up:before {
+  content: "\f116";
+}
+
+.icon-font-menu:before {
+  content: "\f117";
 }
 
 //==========================================

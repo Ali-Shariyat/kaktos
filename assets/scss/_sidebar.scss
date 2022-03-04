@@ -1,3 +1,40 @@
+.menu-icon{
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 5;
+  background-color: #800080;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 1px #6e6e6e;
+}
+.sidebar-sm {
+  @include media-query("(max-width: 991px)") {
+    width: 300px;
+    position: fixed;
+    z-index: 10;
+    right: -300px;
+    background: map-get($color, "-white");
+    background: linear-gradient(165deg, map-get($color, "-white") 0%, map-get($color, "-iceberg") 100%);
+    overflow-y: auto;
+    border-left: 1px solid map-get($color, "-purple");
+    padding-bottom: 10px;
+    transition: all .2s ease;
+    &.active{
+      right: 0;
+    }
+    .sidebar {
+      .image {
+        position: relative !important;
+        left: 0;
+        transform: translate(0, 0);
+        margin: auto;
+      }
+    }
+  }
+}
+
 .sidebar {
   .image {
     top: 0;
@@ -18,19 +55,22 @@
         color: map-get($color, "-lavender-rose-b-6");
         border: 1px solid map-get($color, "-cruise");
       }
-      .cactus-icon{
-        &::before{
-          font-size: 145px;
+
+      .cactus-icon {
+        &::before {
+          font-size: 125px;
         }
       }
-      .soil-icon{
-        &::before{
-          font-size: 54px;
+
+      .soil-icon {
+        &::before {
+          font-size: 44px;
         }
       }
-      .vase-icon{
-        &::before{
-          font-size: 80px;
+
+      .vase-icon {
+        &::before {
+          font-size: 60px;
         }
       }
     }

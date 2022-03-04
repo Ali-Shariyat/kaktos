@@ -1,55 +1,177 @@
 .gallery {
-  .image{
-     width: 100%;
-    &:hover{
-      .gallery-popup{
+  .image {
+    width: 100%;
+
+    &:hover {
+      .gallery-popup {
         visibility: visible;
         opacity: 1;
       }
     }
-    .gallery-popup{
+
+    .gallery-popup {
       visibility: hidden;
       opacity: 0;
       transition: all .3s ease;
       z-index: 10;
     }
-    .discount{
+
+    .discount {
       top: 8px;
       left: 8px;
     }
-    img{
+
+    img {
       width: 150px;
       height: 150px;
       padding: 15px;
     }
   }
-  .galley-content{
-    .price{
-      .cart-plus{
+
+  .galley-content {
+    .price {
+      .cart-plus {
         width: 25px;
         height: 25px;
-        i{
-          &::before{
+
+        i {
+          &::before {
             font-weight: 900;
           }
         }
       }
+      .card-price{
+        width: calc(100% - 25px);
+      }
     }
   }
+
   .grid-item {
     width: 20%;
-  }
-  .category-leaders,
-  .sort-button-group{
-    .is-checked{
-      border: 1px solid map-get($color,"-purple") !important;
-       color: map-get($color,"-purple") ;
+    @include media-query("(max-width: 991px)") {
+      width: 33%;
+    }
+    @include media-query("(max-width: 767px)") {
+      width: 33%;
+    }
+    @include media-query("(max-width: 575px)") {
+      width: 50%;
+    }
+    @include media-query("(max-width: 420px)") {
+      width: 100%;
+    }
+    &.soil-item{
+      width: 100%;
+      @include media-query("(max-width: 991px)") {
+        width: 50%;
+      }
+      @include media-query("(max-width: 767px)") {
+        width: 50%;
+      }
+      @include media-query("(max-width: 575px)") {
+        width: 100%;
+      }
+      @include media-query("(max-width: 420px)") {
+        width: 100%;
+      }
+
+      .image{
+        width: 190px;
+        height: 190px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
-  .sort-button-group{
-    border-right: 1px solid map-get($color,"-dim-gray-2-b-5");
+
+  .category-leaders,
+  .sort-button-group {
+    .is-checked {
+      border: 1px solid map-get($color, "-purple") !important;
+      color: map-get($color, "-purple");
+    }
+  }
+
+  .sort-button-group {
+    border-right: 1px solid map-get($color, "-dim-gray-2-b-5");
+  }
+
+  .category-leaders {
+
+  }
+
+  .option-sm {
+    @include media-query("(max-width: 991px)") {
+      .option-head {
+        .arrow {
+          &.active {
+            &::before {
+              content: "\f116";
+            }
+          }
+        }
+      }
+      .category-leaders {
+        width: 200px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: map-get($color, "-white");
+        z-index: 1;
+        border: 1px solid map-get($color, "-iceberg");
+        border-radius: 20px;
+        top: calc(100% + 10px);
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s ease;
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .category-leaders {
+        .is-checked {
+        }
+      }
+    }
   }
 }
-.lg-outer{
+
+.lg-outer {
   direction: ltr !important;
+}
+
+
+.nice-number{
+  flex-direction: row-reverse;
+  background-color: map-get($color,"-white");
+  padding: 8px 15px;
+  border-radius: 50px;
+  input{
+    height: 22px;
+    width: 22px !important;
+    padding: 0 4px;
+    background-color: map-get($color,"-transparent");
+  }
+  button{
+    background-color: map-get($color,"-transparent");
+    border: 2px solid map-get($color,"-dim-gray-b-4");
+    color: map-get($color,"-dim-gray");
+    padding-top: 2px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    &:hover{
+      border: 2px solid map-get($color,"-purple-b-4");
+      color: map-get($color,"-purple");
+    }
+  }
 }

@@ -11,12 +11,17 @@ $color: (
         -black: #000,
         -black-b-8: rgba(0, 0, 0, 0.8),
         -purple : #800080,
+        -purple-b-4 : rgba(128, 0, 128, 0.4),
+        -purple-b-04 : rgba(128, 0, 128, 0.04),
         -valencia: #d94c48,
         -black-russian: #0e0f10,
         -lime: #00ff00,
+        -jade: #00b078,
+        -jade-b-6: rgba(0, 176, 120, 0.06),
         -aqua: #00ffeb,
         -iceberg: #d1ddd9,
         -dim-gray: #676767,
+        -dim-gray-b-4: rgba(103, 103, 103, 0.4),
         -dim-gray-2: #707070,
         -dim-gray-2-b-5: rgba(112, 112, 112, 0.5),
         -whisper: #ececec,
@@ -25,6 +30,7 @@ $color: (
         -lavender-rose-b-6: rgba(243, 170, 243, 0.6),
         -salmon: #ff7b7b,
         -cruise: #b1ddcf,
+        -snow: #f9f9f9,
 );
 
 //===============================================
