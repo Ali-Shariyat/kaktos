@@ -27,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: iran-yekan, $DefaultFonts;
+  outline: none;
 }
 
 body {
@@ -65,15 +66,21 @@ ul li {
   height: 2px;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .text-no-wrap {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   display: inline-block;
 }
-.cursor-pointer{
+
+.cursor-pointer {
   cursor: pointer;
 }
+
 .black-page {
   position: fixed;
   left: 0;
@@ -85,7 +92,8 @@ ul li {
   transition: all .2s ease;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.36);
-  &.active{
+
+  &.active {
     visibility: visible;
     opacity: 1;
   }
@@ -98,27 +106,17 @@ ul li {
   }
 }
 
-.transition-1s{
+.transition-1s {
   transition: all .1s ease;
 }
-//==========================================
-//button
-//==========================================.
-.btn{
-  &.btn-outline-purple{
-    border-color: map-get($color,"-purple");
-    &:hover{
-      background-color: map-get($color,"-purple");
-      border-color: map-get($color,"-purple");
-    }
-  }
-}
+
 //==========================================
 //line height
 //==========================================
-.line-height-1{
+.line-height-1 {
   line-height: 1;
 }
+
 //==========================================
 //list-style
 //==========================================
@@ -159,10 +157,11 @@ ul li {
   }
 }
 
-.border-style-solid{
+.border-style-solid {
   border-style: solid;
 }
-.border-bottom-style-solid{
+
+.border-bottom-style-solid {
   border-bottom-style: solid;
 }
 
@@ -213,6 +212,7 @@ ul li {
 .object-fit-cover {
   object-fit: cover;
 }
+
 //==========================================
 //margin and padding
 //==========================================
@@ -267,11 +267,11 @@ ul li {
   content: "\f107";
 }
 
-.icon-font-slide-arrow-right:before {
+.icon-font-chevron-right:before {
   content: "\f108";
 }
 
-.icon-font-slide-arrow-left:before {
+.icon-font-chevron-left:before {
   content: "\f109";
 }
 
@@ -305,6 +305,22 @@ ul li {
 
 .icon-font-menu:before {
   content: "\f117";
+}
+
+.icon-font-plus-bold:before {
+  content: "\f118";
+}
+
+.icon-font-triangle:before {
+  content: "\f119";
+}
+
+.icon-font-warning:before {
+  content: "\f120";
+}
+
+.icon-font-tick:before {
+  content: "\f121";
 }
 
 //==========================================

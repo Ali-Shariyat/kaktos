@@ -15,12 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/bootstrap/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendors/nice-number/jquery.nice-number.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/OverlayScrollbars/css/OverlayScrollbars.min.css">
 
-    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lightgallery.min.css" />
-    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lg-zoom.css" />
-    <link type="text/css" rel="stylesheet" href="assets/vendors/nice-number/jquery.nice-number.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendors/flickity/css/flickity.css">
+    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lightgallery.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/vendors/lightgallery/css/lg-zoom.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/vendors/handle-counter/css/handle-counter.min.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body class="rtl" dir="rtl">
@@ -36,40 +36,13 @@
                 <div class="icon-font-close d-lg-none color-purple font-size-26 me-0 ms-auto"></div>
                 <div class="sidebar bgc-white-b-6 border-radius-30 position-relative h-100 pt-0 pt-lg-5 d-flex flex-column  border-width-1 border-style-solid border-color-white">
                     <div class="image position-absolute">
-                        <img src="assets/image/logo.png" alt="logo" class="w-100 h-100" />
+                        <img src="assets/image/logo.png" alt="logo" class="w-100 h-100"/>
                     </div>
                     <div class="sidebar-main w-100 h-100 d-flex flex-column">
-                        <div class="scrollbar px-4 h-100">
-                            <div class="create-vase-items px-4 d-flex flex-column justify-content-between h-100">
-                                <a href="#" class="mb-2 bgc-white-b-6 bgc-white-hover border-radius-30 p-3 d-flex flex-wrap color-lavender-rose-b-6 color-lavender-rose-hover">
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <i class="icon-font-glasses fst-normal font-size-26 px-2"></i>
-                                        <i class="icon-font-bow-tie fst-normal font-size-26 px-2"></i>
-                                    </div>
-                                    <h6 class="text-center mb-0 w-100 font-size-14">اکسسوری نمیخوای؟</h6>
-                                </a>
-                                <a href="#" class="mb-2 bgc-white-b-6 bgc-white-hover border-radius-30 p-3 d-flex flex-wrap color-black-b-8 color-lavender-rose-hover">
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <img src="assets/image/cactus's/1.png" alt="cactus">
-                                    </div>
-                                    <h6 class="text-center mb-0 w-100 mt-3 font-size-14">کاکتوس یا ساکولنت</h6>
-                                </a>
-                                <a href="#" class="mb-2 bgc-white-b-6 bgc-white-hover border-radius-30 p-3 d-flex flex-wrap color-lavender-rose-b-6 color-lavender-rose-hover">
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <i class="icon-font-soil soil-icon fst-normal fw-bold px-2"></i>
-                                    </div>
-                                    <h6 class="text-center mb-0 w-100 font-size-14">خاک گلدونت چی باشه؟</h6>
-                                </a>
-                                <a href="#" class="active mb-2 bgc-white-b-6 bgc-white-hover border-radius-30 p-3 d-flex flex-wrap color-lavender-rose-b-6 color-lavender-rose-hover">
-                                    <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <i class="icon-font-vase vase-icon fst-normal fw-bold px-2"></i>
-                                    </div>
-                                    <h6 class="text-center mb-0 w-100 mt-3 font-size-14">گلدونت رو انتخاب کن</h6>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="px-4 w-100 text-center my-3">
-                            <h6 class="font-size-14 color-dim-gray mb-0">گلدونت این شکلیه</h6>
+                        <div class="px-4 h-100 create-new-vase d-flex align-items-center justify-content-center flex-column">
+                            <a href="" class="icon-font-plus-bold icon bgc-cruise-b-4 color-cruise d-inline-flex font-size-40 justify-content-center align-items-center border-radius-30 bgc-cruise-hover color-white-b-6-hover"></a>
+                            <a href="" class="color-cruise font-size-14 mt-3">یه کاکتوس دیگم میسازم!</a>
+
                         </div>
                     </div>
                 </div>
@@ -81,99 +54,310 @@
                 </div>
             </div>
             <div class="col-12 col-lg-9 h-100 d-flex flex-column">
-                <div class="orders w-100 h-100 scrollbar">
-                    <div class="d-flex h-100 col-10">
-                        <div class="col-3 px-2 h-100">
-                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-4 py-3">
-                                <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                <div class="orders w-100 h-100 d-flex justify-content-end">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-10 h-100 d-flex slider flex-column flex-lg-row">
+                        <div class="d-flex flex-row flex-lg-column justify-content-between mr-auto mt-2 pt-1 px-3 mb-3 mb-lg-0">
+                            <div class="color-purple text-center bgc-white-b-6 border-radius-30 p-2">
+                                <h4 class="font-size-28 mb-0">۶</h4>
+                                <h4 class="font-size-14 mb-0">سفارش</h4>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="chevron chevron-right cursor-pointer mx-1 d-inline-flex justify-content-center align-items-center border-radius-20 bgc-white-b-6">
+                                    <i class="icon-font-chevron-right fst-normal font-size-14 color-purple fw-bold d-inline-flex"></i>
                                 </div>
-                                <div class="cactus bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">کاکتوس یا ساکولنت</h6>
-                                </div>
-                                <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100">
-                                    </div>
-                                </div>
-                                <div class="vase bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">گلدان سرامیکی سبز</h6>
-                                </div>
-                                <h5 class="font-size-16 color-dim-gray text-center my-3">گلدون شماره ۱</h5>
-                                <div class="d-inline-flex w-100 justify-content-center">
-                                    <input type="number" data-number-spinner min="1"
-                                           class="border-0 outline-none" value="1" readonly>
+                                <div class="chevron chevron-left cursor-pointer mx-1 d-inline-flex justify-content-center align-items-center border-radius-20 bgc-white-b-6">
+                                    <i class="icon-font-chevron-left fst-normal font-size-14 color-purple fw-bold d-inline-flex"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 px-2 h-100">
-                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-4 py-3">
-                                <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
-                                </div>
-                                <div class="cactus bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">کاکتوس یا ساکولنت</h6>
-                                </div>
-                                <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100">
-                                    </div>
-                                </div>
-                                <div class="vase bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">گلدان سرامیکی سبز</h6>
-                                </div>
-                                <h5 class="font-size-16 color-dim-gray text-center my-3">گلدون شماره ۱</h5>
-                                <div class="d-inline-flex w-100 justify-content-center">
-                                    <input type="number" data-number-spinner min="1"
-                                           class="border-0 outline-none" value="1" readonly>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 px-2 h-100">
-                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-4 py-3">
-                                <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
-                                </div>
-                                <div class="cactus bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">کاکتوس یا ساکولنت</h6>
-                                </div>
-                                <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100">
-                                    </div>
-                                </div>
-                                <div class="vase bgc-white px-3 py-2 border-radius-30 text-center mb-3">
-                                    <div class="image">
-                                        <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100">
-                                    </div>
-                                    <h6 class="text-center w-100 my-2 font-size-14">گلدان سرامیکی سبز</h6>
-                                </div>
-                                <h5 class="font-size-16 color-dim-gray text-center my-3">گلدون شماره ۱</h5>
-                                <div class="d-inline-flex w-100 justify-content-center">
-                                    <input type="number" data-number-spinner min="1"
-                                           class="border-0 outline-none" value="1" readonly>
+                        <div class="scrollbar h-100 w-100">
+                            <div data-slider data-disable-number="3" data-disable-number-s="1" data-disable-number-xxs="1"
+                                 data-disable-number-xs="1" data-disable-number-m="2"
+                                 data-disable-number-l="2" data-disable-number-xl="3" data-items-nav="false" data-loop="false" data-fade="false"
+                                 data-cell-align="left">
+                                <div class="d-flex align-items-center justify-content-between col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <ul class="col-12 p-0 this-slider mb-0">
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="slider-item col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 item">
+                                            <div class="bgc-jade-b-6 border-width-1 border-style-solid border-color-white h-100 border-radius-40 px-3 py-3">
+                                                <div class="px-3">
+                                                    <div class="accessory bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <img src="assets/image/accessory's/accessory-1.png" alt="accessory">
+                                                    </div>
+                                                    <div class="cactus bgc-white px-3 py-4 py-lg-2 py-xl-4 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/cactus's/1.png" alt="cactus" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">کاکتوس یا ساکولنت</h6>
+                                                    </div>
+                                                    <div class="soil bgc-white px-3 py-2 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/soil's/soil-1.png" alt="soil" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                    </div>
+                                                    <div class="vase bgc-white px-3 py-3 border-radius-30 text-center mb-3">
+                                                        <div class="image">
+                                                            <img src="assets/image/vase's/vase-1.png" alt="vase" class="w-100 h-100 object-fit-cover">
+                                                        </div>
+                                                        <h6 class="text-center w-100 my-2 font-size-12">گلدان سرامیکی سبز</h6>
+                                                    </div>
+                                                    <h5 class="font-size-16 color-dim-gray text-center">گلدون شماره ۱</h5>
+                                                    <div class="d-inline-flex w-100 justify-content-center">
+                                                        <div class="handle-counter" data-number-spinner>
+                                                            <button class="counter-minus d-inline-flex align-items-center justify-content-center">-</button>
+                                                            <input type="text" value="1" readonly>
+                                                            <button class="counter-plus d-inline-flex align-items-center justify-content-center">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-100 d-flex justify-content-end">
-                    <a href="" class="py-3 px-4 mt-3 mb-0 bgc-purple-b-04 border-radius-30 d-flex color-purple align-items-center color-white-hover bgc-purple-hover justify-content-between border-width-1 border-style-solid border-color-white">
+                <div class="w-100 d-flex justify-content-center justify-content-md-end">
+                    <a href=""
+                       class="py-3 px-4 mt-3 mb-0 bgc-purple-b-04 border-radius-30 d-flex color-purple align-items-center color-white-hover bgc-purple-hover justify-content-between border-width-1 border-style-solid border-color-white">
                         <i class="icon-font-arrow-right fst-normal font-size-14 pt-1 px-2 d-flex"></i>
                         <span class="font-size-14">خریدم تمومه ، مرحله بعد</span>
                     </a>
@@ -182,7 +366,6 @@
         </div>
     </div>
 </main>
-
 <div class="back-black"></div>
 
 <script src="assets/vendors/jquery/jquery-3.3.1.min.js"></script>
@@ -193,8 +376,10 @@
 <script src="assets/vendors/lightgallery/lightgallery-all.min.js"></script>
 <script src="assets/vendors/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
 <script src="assets/vendors/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
-<script src="assets/vendors/nice-number/jquery.nice-number.js"></script>
+<script src="assets/vendors/handle-counter/js/handleCounter.js"></script>
 <script src="assets/vendors/isotope/isotope.pkgd.min.js"></script>
+<script src="assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+<script src="assets/vendors/flickity/js/flickity-fade.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

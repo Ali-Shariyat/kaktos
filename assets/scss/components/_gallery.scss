@@ -145,16 +145,18 @@
 }
 
 
-.nice-number{
+[data-number-spinner]{
   flex-direction: row-reverse;
   background-color: map-get($color,"-white");
-  padding: 8px 15px;
+  padding: 7px 15px;
   border-radius: 50px;
   input{
     height: 22px;
-    width: 22px !important;
+    width: 35px !important;
     padding: 0 4px;
     background-color: map-get($color,"-transparent");
+    border: none;
+    outline: none;
   }
   button{
     background-color: map-get($color,"-transparent");
@@ -172,6 +174,7 @@
     &:hover{
       border: 2px solid map-get($color,"-purple-b-4");
       color: map-get($color,"-purple");
+      background: transparent;
     }
   }
 }

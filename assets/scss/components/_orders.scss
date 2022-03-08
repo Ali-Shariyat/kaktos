@@ -1,0 +1,55 @@
+[data-slider]{
+  .slider-item{
+    margin-right: 0;
+    .cactus{
+      .image{
+        width: 100%;
+        height: 110px;
+        margin: auto;
+        @include media-query("(max-width: 767px)") {
+          height: 24vw;
+        }
+        @include media-query("(max-width: 575px)") {
+          width: 30vw;
+          height: 30vw;
+        }
+      }
+    }
+    .soil{
+      .image{
+        height: 75px;
+        @include media-query("(max-width: 575px)") {
+          width: 30vw;
+          height: 16vw;
+        }
+        margin: auto;
+      }
+    }
+    .vase{
+      .image{
+        height: 100px;
+        margin: auto;
+        @include media-query("(max-width: 575px)") {
+          width: 30vw;
+          height: 24vw;
+        }
+      }
+    }
+  }
+}
+.slider{
+  .chevron{
+    width: 30px;
+    height: 30px;
+    @include media-query("(max-width: 992px)") {
+      border: 1px solid map-get($color,"-purple");
+
+    }
+  }
+}
+.create-new-vase{
+  .icon{
+    width: 66px;
+    height: 66px;
+  }
+}

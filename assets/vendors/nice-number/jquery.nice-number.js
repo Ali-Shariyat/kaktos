@@ -68,7 +68,6 @@
             $currentInput.trigger('input');
           }
         });
-
       var $plusButton = $('<button/>')
         .attr('type', 'button')
         .html(settings.buttonIncrement)

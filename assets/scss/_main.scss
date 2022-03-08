@@ -58,6 +58,9 @@ main{
 
 .fixed-height{
   height: 100%;
+  @include media-query("(max-width: 991px)") {
+    height: auto !important;
+  }
 }
 
 /* a black page */
