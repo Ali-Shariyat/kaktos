@@ -3,69 +3,12 @@ $(function () {
     $('.scrollbar').overlayScrollbars({
         scrollbars: {
             autoHide: "l"
-
         }
     });
 });
 
 
 /* lightGallery */
-
-// $('.button').click(function () {
-//     $('.button').removeClass('is-checked');
-//     $(this).addClass('is-checked');
-// });
-//
-// $('.button-group').each(function (i, buttonGroup) {
-//     var $buttonGroup = $(buttonGroup);
-//     $buttonGroup.on('click', 'button', function () {
-//         $buttonGroup.find('.is-checked').removeClass('is-checked');
-//         $(this).addClass('is-checked');
-//     });
-// });
-//
-// var filterFns = {
-//     numberGreaterThan50: function () {
-//         var number = $(this).find('.number').text();
-//         return parseInt(number, 10) > 50;
-//     },
-//     ium: function () {
-//         var name = $(this).find('.name').text();
-//         return name.match(/ium$/);
-//     }
-// };
-//
-// $('#filters').on('click',"button", function () {
-//     var filterValue = $(this).attr('data-filter');
-//     filterValue = filterFns[filterValue] || filterValue;
-//     if (filterValue === "*") {
-//         $('.grid').isotope({filter: filterValue});
-//     } else {
-//         $('.grid').isotope({filter: $("[data-order='" + filterValue + "']")});
-//     }
-// });
-// $('.grid').isotope({
-//     itemSelector: '.grid-item',
-//     layoutMode: 'fitRows',
-//     originLeft: false,
-//     stagger: 10,
-//     getSortData: {
-//         price: function (itemElem) {
-//             var price = $(itemElem).attr('data-price');
-//             return parseInt(price);
-//         },
-//         category: '[data-order] parseInt',
-//     },
-//     sortBy: 'category'
-// });
-// $('.sort-button-group').on('click', 'button', function () {
-//     var sortValue = $(this).attr('data-sort-value');
-//     var direction = $(this).attr('data-sort-direction');
-//     var isAscending = (direction == 'asc');
-//     var newDirection = (direction) ? 'desc' : 'asc';
-//     $('.grid').isotope({sortBy: sortValue, sortAscending: isAscending});
-// });
-
 
 $(document).ready(function () {
     var $gallery = $('#gallery');
@@ -80,7 +23,7 @@ $(document).ready(function () {
         }
     };
 
-    if($gallery.length){
+    if ($gallery.length) {
         $gallery.isotope({
             itemSelector: '.grid-item',
             layoutMode: 'fitRows',
@@ -155,8 +98,6 @@ $("[data-dropdown]").each(function () {
         $(this).find(".option-head .set-text").text(findText);
         $(this).find(".options").toggleClass("active");
         $(this).find(".arrow").toggleClass("active");
-
-
         e.preventDefault();
         e.stopPropagation();
     });
@@ -185,7 +126,19 @@ $(".back-black").click(function () {
 //number spinner
 //==================
 $('[data-number-spinner]').each(function () {
-    $(this).handleCounter();
+    var $this = $(this);
+    $(this).handleCounter({
+        minimum: 0,
+        onMinimum: function (e) {
+            $this.parents(".slider-item").remove();
+            setTimeout(function () {
+                $(".this-slider").flickity('reloadCells').flickity('select', 0);
+                if ($this.parents(".flickity-slider").find(".slider-item").length) {
+                    $(".this-slider").flickity('destroy')
+                }
+            }, 100)
+        },
+    });
 })
 $(document).on("click", ".nice-number", function (e) {
     e.stopPropagation();
@@ -326,44 +279,35 @@ $('[data-slider]').each(function () {
 //==================
 // inputmask
 //==================
-$.fn.hasAttr = function(name) {
+$.fn.hasAttr = function (name) {
     return this.attr(name) !== undefined;
 };
 $(document).ready(function () {
     var getComplete = false;
     if ($("[data-inputmask]").length) {
-
         $("[data-inputmask]").inputmask();
     }
     $("[data-section-completed]").each(function () {
         var $this = $(this);
         var $masked = $this.find(".masked-input")
             .on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
-                if($(this).hasAttr("data-single-input")){
+                if ($(this).hasAttr("data-single-input")) {
                     if ($("[data-inputmask]").inputmask("isComplete")) {
                         $(this).attr("data-single-input", true);
                         $(this).parents("[data-section-completed]").attr("data-section-completed", true);
                         $masked.siblings("button").removeAttr("disabled");
-                    }else{
+                    } else {
                         $(this).attr("data-single-input", false);
                         $(this).parents("[data-section-completed]").attr("data-section-completed", false);
                         $masked.siblings("button").attr("disabled", true);
                     }
                 }
-
-                // if ($("[data-inputmask]").inputmask("isComplete")) {
-                //     $(this).parents("[data-section-completed]").attr("data-section-completed", true);
-                //     $masked.siblings("button").removeAttr("disabled");
-                // } else {
-                //     $(this).parents("[data-section-completed]").attr("data-section-completed", false);
-                //     $masked.siblings("button").attr("disabled", true);
-                // }
             });
 
         var $single = $this.find("[data-single-input]")
             .each(function () {
                 $(this).on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
-                    if(!$(this).hasAttr("data-inputmask")){
+                    if (!$(this).hasAttr("data-inputmask")) {
                         if ($(this).val().length) {
                             $(this).attr("data-single-input", true)
                         } else {
@@ -374,11 +318,11 @@ $(document).ready(function () {
                         if ($(this).parents("[data-section-completed]").find("[data-single-input='true']").length
                             ===
                             $(this).parents("[data-section-completed]").find("[data-single-input]").length) {
-                            $(this).parents("[data-section-completed]").attr("data-section-completed",true);
+                            $(this).parents("[data-section-completed]").attr("data-section-completed", true);
                             $(this).parents("[data-section-completed]").find(".next-step").removeAttr("disabled");
-                        }else{
-                            $(this).parents("[data-section-completed]").attr("data-section-completed",false);
-                            $(this).parents("[data-section-completed]").find(".next-step").attr("disabled",true);
+                        } else {
+                            $(this).parents("[data-section-completed]").attr("data-section-completed", false);
+                            $(this).parents("[data-section-completed]").find(".next-step").attr("disabled", true);
                         }
                     }
                 });
@@ -389,13 +333,17 @@ $(document).ready(function () {
         if ($(this).parents(".step").find("[data-section-completed='true']").length) {
             $(this).parents(".step").find(".indeterminate").prop({
                 "indeterminate": false,
-                "checked":true
+                "checked": true
 
             });
             $(this).parents(".main").slideUp();
             $(this).parents(".step").next(".step").find(".main").slideDown();
         }
     });
-    $(".step:not(.open)").find(".main").slideUp(0)
+    $(".step:not(.open)").find(".main").slideUp(0);
     $(".indeterminate").prop("indeterminate", true);
+});
+
+$(".select-soil").on("click", ".grid-item", function () {
+    $(this).addClass("active").siblings(".grid-item").removeClass("active")
 });

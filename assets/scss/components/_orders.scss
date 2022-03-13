@@ -1,49 +1,91 @@
-[data-slider]{
-  .slider-item{
-    margin-right: 0;
-    .cactus{
-      .image{
-        width: 100%;
-        height: 110px;
-        margin: auto;
-        @include media-query("(max-width: 767px)") {
-          height: 24vw;
+.orders{
+  [data-slider]{
+    //height: 100% !important;
+    li{
+      //height: 100%;
+    }
+    .slider-item{
+      margin-right: 0;
+      .cactus{
+        @include media-query("(max-width: 1400px) and (min-width:992px)") {
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
         }
-        @include media-query("(max-width: 575px)") {
-          width: 30vw;
-          height: 30vw;
+        .image{
+          width: 100%;
+          height: 110px;
+          margin: auto;
+          @include media-query("(max-width: 1400px)") {
+            height: 80px;
+            width: 88%;
+          }
+          @include media-query("(max-width: 991px)") {
+            height: 11vw;
+            width: 100%;
+          }
+          @include media-query("(max-width: 767px)") {
+            height: 12vw;
+            width: 12vw;
+          }
+          @include media-query("(max-width: 575px)") {
+            width: 30vw;
+            height: 30vw;
+          }
         }
       }
-    }
-    .soil{
-      .image{
-        height: 75px;
-        @include media-query("(max-width: 575px)") {
-          width: 30vw;
-          height: 16vw;
+      .soil{
+        .image{
+          height: 75px;
+          @include media-query("(max-width: 1400px)") {
+            height: 36px;
+            width: 80%;
+          }
+          @include media-query("(max-width: 991px)") {
+            height: 4vw;
+            width: 8vw;
+          }
+          @include media-query("(max-width: 767px)") {
+            height: 6vw;
+            width: 11vw;
+          }
+          @include media-query("(max-width: 575px)") {
+            width: 30vw;
+            height: 16vw;
+          }
+          margin: auto;
         }
-        margin: auto;
       }
-    }
-    .vase{
-      .image{
-        height: 100px;
-        margin: auto;
-        @include media-query("(max-width: 575px)") {
-          width: 30vw;
-          height: 24vw;
+      .vase{
+        .image{
+          height: 100px;
+          margin: auto;
+          @include media-query("(max-width: 1400px)") {
+            height: 60px;
+          }
+          @include media-query("(max-width: 991px)") {
+            height: 7vw;
+            width: 100%;
+          }
+          @include media-query("(max-width: 767px)") {
+            height: 8vw;
+            width: 14vw;
+          }
+          @include media-query("(max-width: 575px)") {
+            width: 30vw;
+            height: 24vw;
+          }
         }
       }
     }
   }
-}
-.slider{
-  .chevron{
-    width: 30px;
-    height: 30px;
-    @include media-query("(max-width: 992px)") {
-      border: 1px solid map-get($color,"-purple");
+  .slider{
+    .chevron{
+      width: 30px;
+      height: 30px;
+      @include media-query("(max-width: 992px)") {
+        border: 1px solid map-get($color,"-purple");
 
+      }
     }
   }
 }

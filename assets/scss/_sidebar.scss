@@ -4,11 +4,23 @@
   right: 20px;
   bottom: 20px;
   z-index: 5;
-  background-color: #800080;
+  background-color: map-get($color,"-purple");
   color: #fff;
-  border-radius: 50%;
+  border-radius: 30px;
   box-shadow: 0 0 12px 1px #6e6e6e;
 }
+.details-fixed{
+  width: auto;
+  height: 40px;
+  right: 75px;
+  bottom: 20px;
+  z-index: 5;
+  background-color: map-get($color,"-purple");
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 12px 1px #6e6e6e;
+}
+
 .sidebar-sm {
   @include media-query("(max-width: 991px)") {
     width: 300px;
@@ -50,27 +62,60 @@
     }
 
     .create-vase-items {
+      h6{
+        @include media-query("(max-width: 1350px)") {
+          font-size: 12px !important;
+        }
+      }
+
       .active {
         background-color: map-get($color, "-white");
         color: map-get($color, "-lavender-rose-b-6");
         border: 1px solid map-get($color, "-cruise");
       }
 
-      .cactus-icon {
+      .icon-font-glasses,
+      .icon-font-bow-tie{
         &::before {
-          font-size: 125px;
+          @include media-query("(max-height: 860px)") {
+            font-size: 22px;
+          }
+        }
+      }
+      .cactus{
+        @include media-query("(max-height: 850px)") {
+          height: 100%;
+        }
+        .cactus-icon {
+          &::before {
+            font-size: 125px;
+            @include media-query("(max-height: 860px)") {
+              font-size: 65px;
+            }
+          }
         }
       }
 
       .soil-icon {
         &::before {
           font-size: 44px;
+          @include media-query("(max-height: 860px)") {
+            font-size: 32px;
+          }
         }
       }
 
-      .vase-icon {
-        &::before {
-          font-size: 60px;
+      .vase{
+        @include media-query("(max-height: 850px)") {
+          height: 100%;
+        }
+        .vase-icon {
+          &::before {
+            font-size: 60px;
+            @include media-query("(max-height: 860px)") {
+              font-size: 44px;
+            }
+          }
         }
       }
     }

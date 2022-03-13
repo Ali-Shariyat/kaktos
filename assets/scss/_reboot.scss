@@ -157,12 +157,22 @@ ul li {
   }
 }
 
+@for $i from 1 through 5 {
+  .border-top-width-#{$i} {
+    border-top-width: #{$i}px;
+  }
+}
+
 .border-style-solid {
   border-style: solid;
 }
 
 .border-bottom-style-solid {
   border-bottom-style: solid;
+}
+
+.border-top-style-solid {
+  border-top-style: solid;
 }
 
 @include generate-color("border");

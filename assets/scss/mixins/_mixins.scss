@@ -85,11 +85,19 @@
         }
       }
       .border-bottom-color#{$key} {
-        border-color: map-get($color, $key);
+        border-bottom-color: map-get($color, $key);
       }
       .border-bottom-color#{$key}-hover {
         &:hover {
-          border-color: map-get($color, $key) !important;
+          border-bottom-color: map-get($color, $key) !important;
+        }
+      }
+      .border-top-color#{$key} {
+        border-top-color: map-get($color, $key);
+      }
+      .border-top-color#{$key}-hover {
+        &:hover {
+          border-top-color: map-get($color, $key) !important;
         }
       }
     }

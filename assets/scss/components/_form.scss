@@ -83,8 +83,14 @@
   }
 }
 .custom-dropdown{
+  .form-select{
+    background-image: none;
+    box-shadow: none !important;
+  }
   .icon-font-triangle{
-    transition: all .3s ease;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
   }
   &.collapsed{
     .icon-font-triangle{

@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   background: map-get($color,"-white");
-  background: linear-gradient(165deg, map-get($color,"-white") 0%, map-get($color,"-iceberg") 100%);
+  background: linear-gradient(165deg, map-get($color,"-white") 0%, map-get($color,"-iceberg") 40%);
   &::before{
     content: "";
     position: absolute;
@@ -42,9 +42,31 @@ main{
   }
   .homepage-img{
     .image{
-      width: 400px;
-      @include media-query("(max-width: 550px)") {
-        width: 70%;
+      &:not(.logo){
+        width: 540px;
+        @include media-query("(max-width: 1399px)") {
+          width: 100%;
+        }
+        @include media-query("(max-width: 550px)") {
+          width: 70%;
+        }
+      }
+    }
+    .logo{
+      width: 100px;
+      height: 78px;
+      top: calc(50% + 100px);
+      left: 100px;
+      transform: translate(0, -50%);
+      @include media-query("(max-width: 1399px)") {
+        top: calc(50% + 85px);
+        left: 90px;
+      }
+      @include media-query("(max-width: 1299px)") {
+        width: 80px;
+        height: 58px;
+        top: calc(50% + 65px);
+        left: 80px;
       }
     }
   }

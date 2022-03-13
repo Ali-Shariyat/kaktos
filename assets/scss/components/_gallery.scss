@@ -46,8 +46,18 @@
     }
   }
 
+  .scrollbar{
+    height: calc(100% - 54px);
+    @include media-query("(max-width: 992px)") {
+      height: auto;
+    }
+  }
+
   .grid-item {
     width: 20%;
+    @include media-query("(max-width: 1200px)") {
+      width: 33.3333%;
+    }
     @include media-query("(max-width: 991px)") {
       width: 33%;
     }
@@ -62,6 +72,9 @@
     }
     &.soil-item{
       width: 100%;
+      @include media-query("(max-width: 1200px)") {
+        width: 33.3333%;
+      }
       @include media-query("(max-width: 991px)") {
         width: 50%;
       }
@@ -103,7 +116,7 @@
   }
 
   .option-sm {
-    @include media-query("(max-width: 991px)") {
+    @include media-query("(max-width: 1199px)") {
       .option-head {
         .arrow {
           &.active {
@@ -175,6 +188,18 @@
       border: 2px solid map-get($color,"-purple-b-4");
       color: map-get($color,"-purple");
       background: transparent;
+    }
+  }
+}
+.select-soil{
+  .grid-item{
+    > div{
+      border: 1px solid transparent;
+    }
+    &.active{
+      > div{
+        border: 1px solid map-get($color,"-jade");
+      }
     }
   }
 }
