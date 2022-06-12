@@ -53,7 +53,7 @@ $(document).ready(function () {
                 plugins: [lgZoom, lgFullscreen]
             });
         } else {
-            $('.grid').isotope({filter: $("[data-order='" + filterValue + "']")});
+            $('.grid').isotope({filter: $("." + filterValue )});
             $gallery.data('lightGallery').destroy(true);
             $gallery.lightGallery({
                 selector: "[data-order='" + filterValue.replace('*', '') + "'] .image"

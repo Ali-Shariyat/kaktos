@@ -16,7 +16,7 @@
 }
 
 [class^="icon-font-"]:before,
-[class^="icon-font-"]:after {
+[class*=" icon-font-"]:after {
   font-family: icon-font, $DefaultFonts;
   font-weight: inherit;
   line-height: 1;
